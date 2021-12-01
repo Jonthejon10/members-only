@@ -1,0 +1,25 @@
+extends layout
+
+block content 
+
+    .sign-up-form-container
+        form(method="POST" action="")
+
+            label(for='username') Username
+            input(name='username' id='username' type='text' placeholder='Username' required='true') 
+
+            label(for='password') Password
+            input(name='password' id='password' type='password' placeholder='Password' required='true') 
+
+            label(for='password-confirmation') Confirm password
+            input(name='password-confirmation' id='password-confirmation' type='password' placeholder='Confirm password' required='true') 
+
+            button(type='submit') Sign up
+
+        if errors
+            ul
+                for error in errors
+                    li!= error.msg
+
+        if error 
+            p #{error}

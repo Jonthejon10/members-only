@@ -1,0 +1,22 @@
+extends layout 
+
+block content 
+
+    .member-form-container
+
+        h1 Become an ultra secret society member
+    
+        form(method='POST' action='')
+
+            label(for='password') Ultra secret password 
+            input(type='password' name='password' id='password' placeholder='Password' require='true')
+
+            button(type='submit') Change your peasant status
+
+        if errors 
+            ul 
+                for error in errors 
+                    li!= error.msg
+        
+        if passErr 
+            p #{passErr}

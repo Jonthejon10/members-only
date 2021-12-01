@@ -1,0 +1,34 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+
+    header 
+      nav   
+         ul 
+          li 
+            a(href='/') Home
+
+          if !currentUser
+            li 
+              a(href='/log-in') Log in
+            li 
+              a(href='/sign-up') Sign up
+            
+          if currentUser
+            li 
+              a(href='/log-out') Log out
+            li 
+              a(href='/member') Change membership status
+            li 
+              a(href='/admin') Change admin status
+            li 
+              a(href='/message') Create a new message
+    main
+      block content
+
+
+    footer 
+

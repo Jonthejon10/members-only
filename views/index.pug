@@ -1,0 +1,29 @@
+extends layout
+
+block content
+
+    .message-list-container 
+      h1 Welcome to a little private message board !
+      each message in message_list 
+        .message-list-message 
+          h2 #{message.title}
+          p #{message.timestamp.toDateString()}
+          p #{message.text}
+
+          if currentUser
+            if currentUser.member_status 
+              each auth in message.author
+                p Author: #{auth.username}
+            else 
+              p Author: unknown
+          else 
+            p Author: unknown
+
+          if currentUser
+            if currentUser.admin_status
+              form(method='POST' action='')
+                input#genreid(type='hidden',name='messageid', required='true', value=message._id )
+                button(type='submit') Delete
+                button(type='button')
+
+          
