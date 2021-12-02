@@ -1,3 +1,8 @@
+@font-face {
+	font-family: noto;
+	src: url('../fonts/noto-regular.ttf');
+}
+
 /* CSS RESET */
 * {
 	vertical-align: baseline;
@@ -13,32 +18,151 @@
      	-moz-box-sizing: border-box;
         	box-sizing: border-box;
 	color: #fff;
+	font-family: noto;
 }
 
 html {
 	background-color: #202124;
 }
 
-@mixin header1 {
-	font-size: 2.5rem;
+a {
+	text-decoration: none;
 }
 
-.message-list-container {
+// NAVBAR
+nav {
+	width: 100%;
+	padding: 20px;
+
+	ul {
+		display: flex;
+		list-style-type: none;
+		justify-content: center;
+		align-items: center;
+
+		li {
+			padding-left: 30px;
+			font-size: 1.5rem;
+			a {
+				&:hover {
+					color: rgb(255, 178, 36);
+				}
+			}
+		}
+	}
+}
+
+// MAIN CONTENT
+main {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	
+	justify-content: center;
+	padding-top: 60px;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	max-width: 400px;
+	align-items: center;
+	justify-content: center;
+	padding-top: 20px;
+
+	button {
+		background-color:rgb(255, 178, 36);
+		padding: 10px;
+		color: #000;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		cursor: pointer;
+		
+		&:hover {
+			color: #fff;
+		}
+	}
+
+	label {
+		font-size: 1.3rem;
+		padding: 10px;
+	}
+
+}
+
+input {
+	color: #000;
+	padding: 10px;
+}
+
+@mixin header1 {
+	font-size: 2.5rem;
+	color:rgb(255, 178, 36)
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+
 	h1 {
 		@include header1
 	}
+}
 
+// HOME PAGE
+.message-list-container {
 	.message-list-message {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		padding: 10px;
+		padding: 20px;
 		margin-top: 30px;
-		background-color: rgba(88, 88, 88, 0.5);
+		background-color: rgba(36, 255, 255, 0.5);
 		border-radius: 5px;
+		min-width: 300px;
+		
+		h2 {
+			font-size: 2.2rem;
+			font-weight: 700;
+			color:rgb(255, 178, 36);
+		}
+
+		p {
+			margin-top: 10px;
+		}
+		
+		.message-date {
+			font-size: 0.9rem;
+		}
+
+		.message-text {
+			font-size: 1.3rem;
+		}
 	}
+}
+
+.shortcut-a {
+	color:rgb(255, 178, 36);
+
+	&:hover {
+		color: #fff;
+	}
+}
+
+// MESSAGE FORM
+.message-form-container {
+	form {
+
+		input {
+			width: 300px;
+		}
+
+		textarea {
+			color: #000;
+			padding: 10px;
+		}
+	}
+
+	
 }

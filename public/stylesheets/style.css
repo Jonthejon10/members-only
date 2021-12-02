@@ -1,3 +1,8 @@
+@font-face {
+  font-family: noto;
+  src: url("../fonts/noto-regular.ttf");
+}
+
 /* CSS RESET */
 * {
   vertical-align: baseline;
@@ -12,13 +17,45 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   color: #fff;
+  font-family: noto;
 }
 
 html {
   background-color: #202124;
 }
 
-.message-list-container {
+a {
+  text-decoration: none;
+}
+
+nav {
+  width: 100%;
+  padding: 20px;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav ul li {
+  padding-left: 30px;
+  font-size: 1.5rem;
+}
+
+nav ul li a:hover {
+  color: #ffb224;
+}
+
+main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -29,10 +66,70 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 60px;
 }
 
-.message-list-container h1 {
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 400px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 20px;
+}
+
+form button {
+  background-color: #ffb224;
+  padding: 10px;
+  color: #000;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+form button:hover {
+  color: #fff;
+}
+
+form label {
+  font-size: 1.3rem;
+  padding: 10px;
+}
+
+input {
+  color: #000;
+  padding: 10px;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.container h1 {
   font-size: 2.5rem;
+  color: #ffb224;
 }
 
 .message-list-container .message-list-message {
@@ -46,9 +143,45 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 10px;
+  padding: 20px;
   margin-top: 30px;
-  background-color: rgba(88, 88, 88, 0.5);
+  background-color: rgba(36, 255, 255, 0.5);
   border-radius: 5px;
+  min-width: 300px;
+}
+
+.message-list-container .message-list-message h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #ffb224;
+}
+
+.message-list-container .message-list-message p {
+  margin-top: 10px;
+}
+
+.message-list-container .message-list-message .message-date {
+  font-size: 0.9rem;
+}
+
+.message-list-container .message-list-message .message-text {
+  font-size: 1.3rem;
+}
+
+.shortcut-a {
+  color: #ffb224;
+}
+
+.shortcut-a:hover {
+  color: #fff;
+}
+
+.message-form-container form input {
+  width: 300px;
+}
+
+.message-form-container form textarea {
+  color: #000;
+  padding: 10px;
 }
 /*# sourceMappingURL=style.css.map */
